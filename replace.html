@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // $n 匹配的第n组内容
+    console.log('hello world'.replace(/(\w+)\s(\w+)/, '$2 $1'));
+
+    // $` 匹配结果前面的文本
+    // $& 匹配到的字符串
+    // $' 匹配结果后面的字符
+    console.log('abc'.replace('b', '[$`-$&-$\']'));
+
+    function match(match) {
+      return 2 * match;
+    }
+
+    console.log('3 and 5'.replace(/[0-9]+/g, match));
+
+    // var a = ''
+    var prices = {
+      'p1': '$1.99',
+      'p2': '$9.99',
+      'p3': '$5.00'
+    };
+
+    var template = `
+      <span id="p1"></span>
+      <span id="p2"></span>
+      <span id="p3"></span>
+    `;
+
+    function match2(match, $1, $2, $3, $4) {
+      return $1 + $2 + $3 + prices[$2] + $4;
+    }
+
+    console.log(template.replace(/(<span id=")(.*?)(">)(<\/span>)/g, match2));
+  </script>
+</body>
+</html>

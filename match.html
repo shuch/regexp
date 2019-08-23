@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>match</title>
+</head>
+<body>
+  <script>
+    var s = '_x_x';
+    var r1 = /x/;
+    var r2 = /y/;
+
+    console.log(s.match(r1));
+    console.log(s.match(r2));
+
+    var s2 = 'abba';
+    var r3 = /a/g;
+
+    console.log(s2.match(r3));
+    console.log(r3.exec(s2));
+
+
+  </script>
+</body>
+</html>

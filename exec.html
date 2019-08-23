@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var reg = /a/g;
+    var str = 'abc_abc_abc';
+    while(true) {
+      var match = reg.exec(str);
+      if (!match) break;
+      console.log('#' + match.index + ':' + match[0]);
+    }
+  </script>
+</body>
+</html>
